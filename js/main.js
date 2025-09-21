@@ -57,6 +57,9 @@ homeSwitchBtns.forEach((ele, index) => {
 
 function autoHomeSwitch() {
     setInterval(() => {
+        if (currentItemIndex == 3) {
+            currentItemIndex = 0;
+        }
         homeSwitchBtns.forEach(e => e.classList.remove("active"));
         homeImg.forEach(e => e.classList.remove("active"));
         droneInfo.forEach(e => e.classList.remove("active"));
@@ -64,8 +67,5 @@ function autoHomeSwitch() {
         homeImg[currentItemIndex].classList.add("active");
         droneInfo[currentItemIndex].classList.add("active")
         currentItemIndex++;
-        if (currentItemIndex == 3) {
-            currentItemIndex = 0;
-        }
     }, 5000);
 }

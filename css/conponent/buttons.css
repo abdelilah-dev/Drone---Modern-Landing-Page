@@ -1,0 +1,24 @@
+.group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.button {
+    text-decoration: none;
+    padding: 12px 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: transparent;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.btn-primary:hover {
+    background-color: #489;
+    color: white;
+    border-color: #489;
+}

@@ -242,41 +242,55 @@ ul {
 }
 @media (max-width: 992px) {
     .landing-content .row {
-        padding-top: 150px;
+        padding-top: 100px;
+    }
+}@media (max-width: 567px) {
+    .landing-content .row {
+        padding-top: 60px;
     }
 }
 .landing-content .row .home-imgs {
 }
 .landing-content .row .home-imgs .home-img {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
-.landing-content .row .home-imgs .home-img img {
-    width: 100%;
-    position: absolute;
-    left: -50rem;
-    right: 0;
-    transition: 0.8s;
-}
-.landing-content .row .home-imgs .home-img img.active {
-    left: 0;
-}
-/* @media (max-width: 992px) {
+@media (max-width: 578px) {
     .landing-content .row .home-imgs .home-img {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-    .landing-content .row .home-imgs .home-img img {
+        height: 350px;
+    }
+}
+.landing-content .row .home-img img {
+    width: 100%;
+    order: -1;
+    transition: 1s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-200%, -50%);
+}
+
+.landing-content .row .home-imgs .home-img img.active {
+    transform: translate(-50%, -50%);
+}
+@media (max-width: 992px){
+    .landing-content .row .home-img img {
         width: 80%;
-        position: static;
-        transition: 0.8s;
-        transform: translateX(-50rem);
     }
     .landing-content .row .home-imgs .home-img img.active {
-                order: -1;
-                    transform: translateX(0);
+        transform: translate(-50%, -40%);
     }
-} */
+}
+@media (max-width: 578px) {
+    .landing-content .row .home-img img {
+        width: 100%;
+    }
+}
+
 .landing-content .row .drone-info {
 }
 .landing-content .row .drone-info {}
@@ -305,9 +319,13 @@ ul {
     justify-content: start;
     gap: 1rem;
     padding: 20px 10px;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
-
+@media (max-width: 992px) {
+    .landing-content .row .drone-info .moving-btn {
+        margin-top: 0rem;
+    }
+}
 .landing-content .row .drone-info .moving-btn span {
     width: 20px;
     height: 20px;

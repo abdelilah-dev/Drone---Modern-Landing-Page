@@ -16,9 +16,19 @@
     font-weight: 600;
     transition: 0.5s;
 }
+.btn-secondry {
+    color: white;
+    border-color: white;
+}
 
+.btn-secondry:hover {
+    color: #489;
+    background-color: white;
+    border-color: white;
+}
 .btn-primary:hover {
     background-color: #489;
     color: white;
     border-color: #489;
 }
+

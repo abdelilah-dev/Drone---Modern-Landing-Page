@@ -76,10 +76,10 @@ function autoHomeEleSwitch() {
 function activateMenuLinks() {
     let menuLinks = document.querySelectorAll(".header-section .header-content .links li a");
     let featureSection = document.querySelector(".feature-section");
-    let testsection = document.querySelector(".test-section");
-    let allSections = [featureSection, testsection];
+    let accessoriesSection = document.querySelector(".accessories-section");
+    let allSections = [featureSection, accessoriesSection];
     allSections.forEach((ele, index) => {
-        if (window.scrollY >= ele.offsetTop - 40) {
+        if (window.scrollY >= ele.offsetTop - 100) {
             menuLinks.forEach(ele => ele.classList.remove("active"));
             menuLinks[index].classList.add("active");
         } else {

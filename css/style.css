@@ -347,7 +347,6 @@ ul {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
 }
-
 .feature-section .feature-content h2 {
     font-weight: 800;
     text-align: center;
@@ -362,8 +361,6 @@ ul {
     line-height: 1.8;
 }
 
-.feature-content .row {}
-
 .feature-content .row>div {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -371,10 +368,16 @@ ul {
 
 .feature-content .row .content {
     padding: 20px 20px;
-    box-shadow: 0 0 16px #0000000f;
+    box-shadow: 0 0 16px #0000002e;
     border-radius: 20px;
 }
-
+.feature-content .row .content .img {
+    display: block;
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 1rem;
+    color: #489;
+}
 .feature-content .row>div h5 {
     font-size: 23px;
     font-weight: 600;
@@ -382,8 +385,6 @@ ul {
     margin-bottom: 1rem;
     text-align: center;
 }
-
-.feature-content .row>div p {}
 
 /* End Feature Section  */
 
@@ -456,3 +457,71 @@ ul {
     display: none;
 }
 /* End drone-detail-section  */
+/* STart accessories section  */
+.accessories-section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    text-align: center;
+}
+
+.accessories-section .accessories-content h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.accessories-content p {
+    width: 90%;
+    line-height: 1.7;
+    margin: auto;
+}
+.accessories-content .row>div {
+    padding: 25px 15px;
+}
+.accessories-content .row>div>div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px 15px;
+    box-shadow: 0 0 20px #00000029;
+    border-radius: 10px;
+}
+
+.accessories-content .row .img {
+    margin-bottom: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accessories-content .row .img img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.accessories-content .row >div:hover .img img {
+    transform: scale(1.1);
+}
+.accessories-content .row a {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    color: black;
+    transition: 0.5s;
+}
+
+.accessories-content .row a:hover {
+    color: #489;
+}
+
+.accessories-content .row span {
+    display: block;
+    color: #489;
+}
+
+/* end accssories section */

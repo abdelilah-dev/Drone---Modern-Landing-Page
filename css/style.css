@@ -19,7 +19,20 @@ ul {
     margin-bottom: 0;
     padding: 0;
 }
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
 
+.section-description {
+    width: 90%;
+    line-height: 1.7;
+    margin: auto;
+    text-align: center;
+    color: #888;
+}
 /* Start Hero section  */
 .hero-area {
     width: 100%;
@@ -236,8 +249,6 @@ ul {
         display: none;
     }
 }
-
-.landing-section .landing-content  {}
 .landing-content .row {
     padding-top: 200px;
     padding-bottom: 50px;
@@ -250,8 +261,6 @@ ul {
     .landing-content .row {
         padding-top: 60px;
     }
-}
-.landing-content .row .home-imgs {
 }
 .landing-content .row .home-imgs .home-img {
     width: 100%;
@@ -292,10 +301,6 @@ ul {
         width: 100%;
     }
 }
-
-.landing-content .row .drone-info {
-}
-.landing-content .row .drone-info {}
 .landing-section .row .drone-info .item {
     padding: 10px;
     display: none;
@@ -312,9 +317,8 @@ ul {
     width: 80%;
     font-size: 18px;
     color: #888;
-    line-height: 1.7;}
-.landing-content .row .drone-info .item > div {}
-.landing-content .row .drone-info .item  {}
+    line-height: 1.7;
+    }
 .landing-content .row .drone-info .moving-btn {
     display: flex;
     align-items: center;
@@ -347,19 +351,7 @@ ul {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
 }
-.feature-section .feature-content h2 {
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-}
 
-.feature-content p {
-    text-align: center;
-    color: #888;
-    font-size: 16px;
-    line-height: 1.8;
-}
 
 .feature-content .row>div {
     padding-top: 20px;
@@ -464,17 +456,7 @@ ul {
     text-align: center;
 }
 
-.accessories-section .accessories-content h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
 
-.accessories-content p {
-    width: 90%;
-    line-height: 1.7;
-    margin: auto;
-}
 .accessories-content .row>div {
     padding: 25px 15px;
 }
@@ -523,5 +505,269 @@ ul {
     display: block;
     color: #489;
 }
-
 /* end accssories section */
+
+.section-md {
+    background: #489;
+    padding: 90px 0;
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .section-md {
+        padding: 60px 0;
+    }
+}
+
+.section-content .row>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    svg {
+        transform: rotate(45deg);
+    }
+
+    p {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 500;
+    }
+}
+
+.section-content .row>div form {
+    width: 100%;
+    padding: 0 10px;
+    position: relative;
+    margin: auto;
+
+    input {
+        width: 100%;
+        padding: 15px 15px;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        font-weight: 600;
+    }
+
+    button {
+        position: absolute;
+        right: 11px;
+        top: 0;
+        width: fit-content;
+        height: 55px;
+        width: 55px;
+        border-radius: 50%;
+        background: #489;
+        border: 3px solid white;
+        color: white;
+        font-size: 25px;
+        transition: 0.5s;
+
+        svg {
+            transform: rotate(0);
+        }
+    }
+
+    button:hover {
+        background-color: rgb(34, 69, 78);
+    }
+}
+
+.gallery-section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+
+    .gallery-content .row>div {
+        background-position: center;
+        background-size: cover;
+        height: 250px;
+        padding: 0;
+    }
+
+    .gallery-content .row {
+        >div:nth-child(1) {
+            background-image: url('../images/gallary1.jpg');
+        }
+
+        >div:nth-child(2) {
+            background-image: url('../images/gallary2.jpg');
+        }
+
+        >div:nth-child(3) {
+            background-image: url('../images/gallary3.jpg');
+        }
+
+        >div:nth-child(4) {
+            background-image: url('../images/gallary4.jpg');
+        }
+
+        a {
+            width: 100%;
+            height: 100%;
+            background-color: #3196b099;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            z-index: -1;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        >div:hover a {
+            z-index: 1;
+            opacity: 1;
+        }
+    }
+
+}
+
+.full-img-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #101d1fe6;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.full-img-view.active {
+    opacity: 1;
+    z-index: 120;
+    ;
+}
+
+.full-img-view img {
+    transition: 0.5s;
+    transform: scale(0);
+    width: 90%;
+}
+
+.full-img-view.active img {
+    transform: scale(1);
+}
+
+.full-img-view .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 50px;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.full-img-view .close-btn:hover {
+    color: #489;
+}
+
+.testimonial-section {
+    position: relative;
+    padding: 50px 0;
+    background: #eeeeee57;
+}
+
+.testimonial-section::before {
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 100%;
+    background: #15758d;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .testimonial-section::before {
+        display: none;
+    }
+}
+        
+                                .testimonial-section .swiper-slide {
+                                    padding: 60px 0;
+                
+                                    .row img {
+                                        margin-left: auto;
+                                        display: block;
+                                        border-radius: 50%;
+                                        margin-right: 2rem;
+                
+                                    }
+                
+                                    @media (max-width: 768px) {
+                                        .row img {
+                                            margin: 0;
+                                            margin-bottom: 1rem;
+                                        }
+                                    }
+                
+                                    .user-name {
+                                        font-weight: 700;
+                                        margin-bottom: 1rem;
+                                        display: block;
+                                    }
+                
+                                    p {
+                                        line-height: 1.8;
+                                        color: #888;
+                                    }
+                
+                                    .user-site a {
+                                        font-weight: 900;
+                                        text-decoration: none;
+                                        margin-bottom: 1rem;
+                                        display: block;
+                                        color: black;
+                                        transition: 0.5s;
+                                    }
+                
+                                    .user-site a:hover {
+                                        color: #499;
+                                    }
+                                }
+                
+                                .swiper-pagination-bullet {
+                                    opacity: 1;
+                                    width: 20px !important;
+                                    height: 20px !important;
+                                    background-origin: transparent !important;
+                                    transition: 0.5s;
+                                }
+                
+                                .swiper-pagination-bullet:hover {
+                                    opacity: 1;
+                                    background-color: #489;
+                                }
+                
+                                .social-menu {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: start;
+                                    gap: 0.5rem;
+                                }
+                
+                                .social-menu a {
+                                    width: 30px;
+                                    height: 30px;
+                                    background-color: black;
+                                    color: white;
+                                    text-decoration: none;
+                                    text-align: center;
+                                    line-height: 30px;
+                                    border-radius: 50%;
+                                    transition: 0.5s;
+                                }
+                
+                                .social-menu a:hover {
+                                    background-color: #489;
+                                }
+                

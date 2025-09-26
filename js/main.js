@@ -6,6 +6,9 @@ let toggleMenu = document.querySelector(".header-content .links ul");
 
 window.addEventListener("DOMContentLoaded", event => {
     autoHomeEleSwitch();
+    setTimeout(() => {
+        runSwiper();
+    }, 1000);
     if (window.innerWidth <= 992){
         headerContainer.classList.add("container-fluid");
         headerContainer.classList.remove("container");
@@ -77,7 +80,8 @@ function activateMenuLinks() {
     let menuLinks = document.querySelectorAll(".header-section .header-content .links li a");
     let featureSection = document.querySelector(".feature-section");
     let accessoriesSection = document.querySelector(".accessories-section");
-    let allSections = [featureSection, accessoriesSection];
+    let gallarySection = document.querySelector(".gallery-section");
+    let allSections = [featureSection, accessoriesSection, gallarySection];
     allSections.forEach((ele, index) => {
         if (window.scrollY >= ele.offsetTop - 100) {
             menuLinks.forEach(ele => ele.classList.remove("active"));
@@ -90,14 +94,63 @@ function activateMenuLinks() {
 
 const swiper = new Swiper(".slider-container", {
     effect: "slide",
-    speed: 900,
+    speed: 1300,
     loop: true,
     spaceBetween: 30,
     autoplay: { delay: 4000 },
     pagination: {
         el: ".swiper-pagination",
-        clickable: true,
+        type: "fraction",
+      },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
+})
+
+let imgDetails = document.querySelectorAll(".img-details");
+let fullImgView = document.querySelector(".full-img-view");
+let targetViewImg = document.querySelector(".full-img-view img")
+console.log(fullImgView);
+console.log(targetViewImg.src)
+imgDetails.forEach(ele => {
+    ele.addEventListener("click", event => {
+        event.preventDefault();
+        console.log(ele.getAttribute("data-nthImg"))
+        fullImgView.classList.add("active");
+        targetViewImg.src = ele.getAttribute("data-nthImg");
+    })
+})
+fullImgView.addEventListener("click", event => {
+    console.log(event.target);
+    if (!(event.target == targetViewImg)) {
+        fullImgView.classList.remove("active");
+    }
+})
+
+
+    const swipertwo = new Swiper(".swiper-container", {
+    effect: "slide",
+    speed: 1300,
+    spaceBetween: 30,
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+})
+
+const testimonialSwiper = new Swiper(".testimonial-swiper", {
+    effect: "slide",
+    speed: 1300,
+    loop: true,
+    spaceBetween: 30,
+    autoplay: { delay: 4000 },
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",

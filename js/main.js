@@ -7,7 +7,6 @@ let toggleMenu = document.querySelector(".header-content .links ul");
 window.addEventListener("DOMContentLoaded", event => {
     autoHomeEleSwitch();
     setTimeout(() => {
-        runSwiper();
     }, 1000);
     if (window.innerWidth <= 992){
         headerContainer.classList.add("container-fluid");
@@ -16,6 +15,24 @@ window.addEventListener("DOMContentLoaded", event => {
     if (window.scrollY > 110 && !headerSection.classList.contains("fixed")) {
         headerSection.classList.add("scrolling-mode");
     }
+
+    const testimonialSwiper = new Swiper(".testimonial-swiper", {
+    effect: "slide",
+    speed: 1300,
+    loop: true,
+    spaceBetween: 30,
+    autoplay: { delay: 4000 },
+
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+})
+
 })
 
 window.addEventListener("resize", event => {
@@ -129,30 +146,16 @@ fullImgView.addEventListener("click", event => {
 })
 
 
-    const swipertwo = new Swiper(".swiper-container", {
-    effect: "slide",
-    speed: 1300,
-    spaceBetween: 30,
+let contactInputs = [...document.querySelectorAll(".contact-section input"), document.querySelector(".contact-section textarea")];
+console.log(contactInputs);
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-})
-
-const testimonialSwiper = new Swiper(".testimonial-swiper", {
-    effect: "slide",
-    speed: 1300,
-    loop: true,
-    spaceBetween: 30,
-    autoplay: { delay: 4000 },
-
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+contactInputs.forEach(ele => {
+    ele.addEventListener("blur", event => {
+        let label = document.querySelector("label[for=\"" + ele.getAttribute("id") + "\"]");
+        if (ele.value != "") {
+            label.classList.add("active");
+        } else {
+            label.classList.remove("active");
+        }
+    })
 })

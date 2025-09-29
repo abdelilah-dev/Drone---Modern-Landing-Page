@@ -516,7 +516,7 @@
             <div class="container">
                 <div class="contact-content">
                     <div class="row">
-                        <div class="col-12 col-lg-6 text-start mb-5 mb-md-0">
+                        <div class="col-12 col-lg-6 text-start mb-5 mb-lg-0">
                             <h2 class="section-title fs-4 text-start">Get in touch</h2>
                             <p class="section-description text-start m-0">Have a question or a testimonial about our products?
                                 Feel free to
@@ -525,14 +525,22 @@
                             <form action="" class="form">
                                 <div class="row ">
                                     <div class="name-box col-12 col-md-6 ">
-                                        <input class="valid" type="text" name="name" id="name" required>
+                                        <input class="" type="text" name="name" id="name" required>
                                         <label for="name">Your Name</label>
-                                        <!-- <span class="form-validate">the error</span> -->
+                                        <div class="form-validation" id="name">
+                                            <div class="error"><i class="fa-solid fa-circle-exclamation"></i></div>
+                                            <div class="valid"><i class="fa-solid fa-circle-check"></i></div>
+                                            <span class="error-msg"></span>
+                                        </div>
                                     </div>
                                     <div class="emial-box col-12 col-md-6">
-                                        <input class="valid" type="email" name="email" id="email" required>
+                                        <input class="" type="email" name="email" id="email" required>
                                         <label for="email">Your Email</label>
-                                        <!-- <span class="form-validate">the error</span> -->
+                                        <div class="form-validation" id="email">
+                                            <div class="error"><i class="fa-solid fa-circle-exclamation"></i></div>
+                                            <div class="valid"><i class="fa-solid fa-circle-check"></i></div>
+                                            <span class="error-msg"></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="msg-box">
@@ -551,12 +559,67 @@
                                 send us an e-mail, give us a call, or visit us at
                                 the Drone office.
                             </p>
-        
+                            <ul class="mt-5">
+                                <li class="d-flex align-items-center gap-4 mb-4">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="info">
+                                        <span>Address</span>
+                                        <a href="#">3508 Franklee Lane <br> Philadelphia, PA 19108</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center gap-4 mb-4">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div class="info">
+                                        <span>Call Us</span>
+                                        <a href="#">
+                                            +(01) 484 559 9532 br
+                                            +(01) 578 634 4568</a>
+                                    </div>
+                                </li>
+                            
+                                <li class="d-flex align-items-center gap-4 mb-4">
+                                    <div class="icon">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div class="info">
+                                        <span>E-mail Us</span>
+                                        <a href="#">
+                                            mail@demolink.org</a>
+                                    </div>
+                                </li>
+
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <footer class="footer-section">
+            <div class="container">
+                <div class="logo mb-3">
+                    <img src="images/logo-default-286x60.png" alt="">
+                </div>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+                <div class="social-link">
+                    <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <hr>
+                <p class="mt-2 pt-2">
+                    © 2025 Drone . All rights reserved. reDeveloped by <a href="">Abdelilah-Dev</a>
+                </p>
+            </div>
+        </footer>
         <script src="./assets/js/all.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>

@@ -98,7 +98,8 @@ function activateMenuLinks() {
     let featureSection = document.querySelector(".feature-section");
     let accessoriesSection = document.querySelector(".accessories-section");
     let gallarySection = document.querySelector(".gallery-section");
-    let allSections = [featureSection, accessoriesSection, gallarySection];
+    let contactSection = document.querySelector(".contact-section")
+    let allSections = [featureSection, accessoriesSection, gallarySection, contactSection];
     allSections.forEach((ele, index) => {
         if (window.scrollY >= ele.offsetTop - 100) {
             menuLinks.forEach(ele => ele.classList.remove("active"));
@@ -128,18 +129,14 @@ const swiper = new Swiper(".slider-container", {
 let imgDetails = document.querySelectorAll(".img-details");
 let fullImgView = document.querySelector(".full-img-view");
 let targetViewImg = document.querySelector(".full-img-view img")
-console.log(fullImgView);
-console.log(targetViewImg.src)
 imgDetails.forEach(ele => {
     ele.addEventListener("click", event => {
         event.preventDefault();
-        console.log(ele.getAttribute("data-nthImg"))
         fullImgView.classList.add("active");
         targetViewImg.src = ele.getAttribute("data-nthImg");
     })
 })
 fullImgView.addEventListener("click", event => {
-    console.log(event.target);
     if (!(event.target == targetViewImg)) {
         fullImgView.classList.remove("active");
     }
@@ -147,15 +144,60 @@ fullImgView.addEventListener("click", event => {
 
 
 let contactInputs = [...document.querySelectorAll(".contact-section input"), document.querySelector(".contact-section textarea")];
-console.log(contactInputs);
+let contactForm = document.querySelector(".contact-section .form")
 
 contactInputs.forEach(ele => {
+    let errorIcon = document.querySelector("div[id=\"" + ele.getAttribute("id") + "\"] .error");
+    let validIcon = document.querySelector("div[id=\"" + ele.getAttribute("id") + "\"] .valid");
     ele.addEventListener("blur", event => {
         let label = document.querySelector("label[for=\"" + ele.getAttribute("id") + "\"]");
         if (ele.value != "") {
             label.classList.add("active");
         } else {
+            ele.classList.remove("valid");
+            ele.classList.remove("invalid");
             label.classList.remove("active");
+            validIcon.classList.remove("active");
+            errorIcon.classList.remove("active");
+        }
+    })
+    ele.addEventListener("keyup", event => {
+        if (ele.getAttribute("id") == "name") {
+            if (checkNameValidation(ele.value)) {
+                ele.classList.add("valid");
+                ele.classList.remove("invalid")
+                validIcon.classList.add("active");
+                errorIcon.classList.remove("active");
+            } else {
+                ele.classList.add("invalid")
+                ele.classList.remove("valid");
+                validIcon.classList.remove("active");
+                errorIcon.classList.add("active");
+            }
+        } else if (ele.getAttribute("id") == "email") {
+            if (checkEmailValidation(ele.value)) {
+                ele.classList.add("valid");
+                ele.classList.remove("invalid")
+                validIcon.classList.add("active");
+                errorIcon.classList.remove("active");
+            } else {
+                ele.classList.add("invalid")
+                ele.classList.remove("valid");
+                validIcon.classList.remove("active");
+                errorIcon.classList.add("active");
+            }
         }
     })
 })
+
+function checkNameValidation(name) {
+    if (name.length < 3)
+        return false;
+    if (! /^[a-zA-Z]+$/.test(name))
+        return false;
+    return true;
+}
+function checkEmailValidation(email) {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+}
